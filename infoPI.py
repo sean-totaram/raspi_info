@@ -27,7 +27,8 @@ def getPost(fmt):
            }
     return post
 
-#username and password for MongoDB
+#server, username, and password for MongoDB
+server = input("Please enter server address")
 usr = input("Please enter Username\n")
 pwd = input("Please enter Password\n")
 
@@ -40,7 +41,7 @@ fmt = "%Y-%m-%d %H:%M:%S"
 timestart = time.time()
 
 #connect to Mongo Server
-client = MongoClient("mongodb://192.168.1.240:27017", username = usr, password = pwd)
+client = MongoClient(server, username = usr, password = pwd)
 db = client.raspi
 collection = db.pitemp
 
